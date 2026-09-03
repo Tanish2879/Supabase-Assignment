@@ -1,0 +1,72 @@
+@use "variables" as *;
+@use "components";
+@use "navbar";
+@use "hero";
+@use "products";
+@use "cart";
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: $font-family-base;
+  background-color: $bg-body;
+  color: $text-main;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button, input, select {
+  font-family: inherit;
+}
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex-grow: 1;
+}
+
+.app-footer {
+  background-color: $bg-surface;
+  border-top: 1px solid $border-color;
+  padding: 2.5rem 1.5rem;
+  margin-top: auto;
+  text-align: center;
+
+  .footer-content {
+    max-width: $max-width;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: $text-muted;
+
+    .footer-credits {
+      font-size: 0.8rem;
+      color: $text-light;
+    }
+  }
+}
+
+.auth-page{min-height:100vh;display:grid;place-items:center;padding:20px;background:linear-gradient(135deg,#eef2ff,#f8fafc)}
+.auth-card{width:min(420px,100%);background:#fff;padding:36px;border-radius:18px;box-shadow:0 20px 50px rgba(0,0,0,.12);display:flex;flex-direction:column;gap:14px;text-align:center}.auth-logo{font-size:42px}.auth-card h1{margin:0}.auth-card p{margin:0;color:#64748b}.auth-card input{padding:13px;border:1px solid #cbd5e1;border-radius:9px;font-size:15px}.auth-card button{padding:13px;border:0;border-radius:9px;background:#2563eb;color:#fff;font-weight:700;cursor:pointer}.auth-card .auth-switch{background:transparent;color:#2563eb;padding:6px}.auth-message{padding:10px;border-radius:8px;background:#f1f5f9;color:#334155;font-size:14px}.test-note{font-size:12px;color:#64748b;line-height:1.5}.user-email{font-size:12px;color:inherit;opacity:.8;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.logout-btn{background:transparent;border:1px solid currentColor;color:inherit;border-radius:6px;padding:6px 10px;cursor:pointer}.cart-loading{text-align:center;padding:30px}

@@ -1,0 +1,144 @@
+@use "variables" as *;
+
+.btn {
+
+  transition: $transition;
+  white-space: nowrap;
+  user-select: none;  
+  display: inline-flex;
+  align-items: center;
+  font-family: inherit;
+  font: 1rem;
+  font-weight: 600;
+  padding: 0.6rem 1.2rem;
+  border-radius: $radius-md;
+  border: 1px solid transparent;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: 2px solid $primary;
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+    filter: grayscale(20%);
+  }
+
+  // Variants
+  &-primary {
+    background-color: $primary;
+    color: $bg-surface;
+    box-shadow: 0 2px 4px rgba(99, 102, 241, 0.25);
+
+    &:hover:not(:disabled) {
+      background-color: $primary-hover;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 8px rgba(99, 102, 241, 0.35);
+    }
+    &:active:not(:disabled) {
+      transform: translateY(0);
+    }
+  }
+
+  &-secondary {
+    background-color: $secondary;
+    color: $bg-surface;
+
+    &:hover:not(:disabled) {
+      background-color: $secondary-hover;
+      transform: translateY(-1px);
+    }
+  }
+
+  &-outline {
+    background-color: transparent;
+    border-color: $border-color;
+    color: $text-main;
+
+    &:hover:not(:disabled) {
+      background-color: $bg-subtle;
+      border-color: $border-hover;
+    }
+  }
+
+  &-danger {
+    background-color: $danger-light;
+    border-color: rgba(239, 68, 68, 0.2);
+    color: $danger;
+
+    &:hover:not(:disabled) {
+      background-color: $danger;
+      color: $bg-surface;
+    }
+  }
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: $radius-full;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+
+  &-primary {
+    background-color: $primary-light;
+    color: $primary;
+  }
+
+  &-success {
+    background-color: $success-light;
+    color: $success-dark;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+  }
+
+  &-danger {
+    background-color: $danger;
+    color: $bg-surface;
+  }
+
+  &-neutral {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: $text-main;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+  }
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3.5rem 1.5rem;
+  text-align: center;
+  background-color: $bg-surface;
+  border: 1.5px dashed $border-color;
+  border-radius: $radius-lg;
+  margin: 1.5rem 0;
+
+  &-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.05));
+  }
+
+  &-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: $text-main;
+    margin-bottom: 0.5rem;
+  }
+
+  &-desc {
+    font-size: 0.95rem;
+    color: $text-muted;
+    max-width: 420px;
+    line-height: 1.5;
+  }
+}

@@ -1,0 +1,108 @@
+@use "variables" as *;
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid $border-color;
+  box-shadow: $shadow-sm;
+
+  &-container {
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: 0.85rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    text-decoration: none;
+    font-size: 1.35rem;
+    font-weight: 700;
+
+    .brand-icon {
+      font-size: 1.4rem;
+    }
+
+    .brand-name {
+      // background: linear-gradient(135deg, $primary 0%, #3b82f6 100%);  
+      background: rgb(63, 87, 224);  
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  &-links {
+
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+
+    .nav-link {
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: $text-muted;
+      // transition: $transition;
+      padding: 0.4rem 0.6rem;
+      border-radius: $radius-sm;
+
+      &:hover {
+        color: $primary;
+        background-color: $primary-light;
+      }
+    }
+
+    .cart-link {
+      display: inline-flex;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background-color: $bg-subtle;
+      padding: 0.45rem 0.85rem;
+      border-radius: $radius-full;
+      color: $text-main;
+      border: 1px solid $border-color;
+
+      &:hover {
+        border-color: $primary;
+        background-color: $primary-light;
+        color: $primary;
+      }
+
+      .cart-badge-count {
+        min-width: 2.4rem;
+        height: 1.4rem;
+        padding: 0 0.4rem;
+        font-size: 0.7rem;
+        line-height: 1;
+      }
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .navbar {
+    width: auto;
+    &-container {
+      padding: 0.75rem 1rem;
+    }
+    &-links {
+      gap: 0.75rem;
+
+      .nav-link {
+        font-size: 0.85rem;
+        padding: 0.3rem 0.4rem;
+      }
+    }
+  }
+}
+
+
