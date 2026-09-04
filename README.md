@@ -9,6 +9,20 @@
 - Row Level Security (RLS)
 - Products and cart_items database relationship
 
+## Username and Password 
+
+- username : admin@example.com
+- password : admin@2
+
+- username : admin3@example.com
+- password : admin@3
+
+- username : admin4@example.com
+- password : admin@4
+
+- username : admin5@example.com
+- password : admin@5
+
 
 ## Database flow
 `auth.users` -> `cart_items.user_id`
